@@ -1,4 +1,4 @@
-package takim.sprint_line_lv11;
+package takim.sprint_line_lv1_1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

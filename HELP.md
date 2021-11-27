@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'takim.sprint_line_lv1.1' is invalid and this project uses 'takim.sprint_line_lv11' instead.
+* The original package name 'takim.sprint_line_lv1.1' is invalid and this project uses 'takim.sprint_line_lv1_1' instead.
 
 # Getting Started
 

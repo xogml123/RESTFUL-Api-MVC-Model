@@ -1,4 +1,4 @@
-package takim.sprint_line_lv11;
+package takim.sprint_line_lv1_1;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
