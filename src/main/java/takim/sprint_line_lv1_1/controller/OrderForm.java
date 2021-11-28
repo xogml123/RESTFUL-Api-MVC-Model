@@ -1,26 +1,8 @@
-package takim.sprint_line_lv1_1.domain;
+package takim.sprint_line_lv1_1.controller;
 
-public class Order {
-    private long id;
+public class OrderForm {
     private String name;
     private int orderContentIndex;
-
-    public Order() {
-    }
-
-    public Order(long id, String name, int orderContentIndex) {
-        this.id = id;
-        this.name = name;
-        this.orderContentIndex = orderContentIndex;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
