@@ -47,7 +47,7 @@ public class OrderController {
     }
 
     @PostMapping("/orders")
-    public String create(OrderForm orderForm) {
+    public String createOrder(OrderForm orderForm) {
         Order order =new Order();
         order.setName(orderForm.getName());
         order.setOrderContentIndex(orderForm.getOrderContentIndex());
@@ -56,8 +56,14 @@ public class OrderController {
     }
 
     @DeleteMapping("/orders/{id}")
-    public String delete(@PathVariable Long id, Model model) {
+    public String deleteOrder(@PathVariable Long id) {
         orderService.deleteOrder(id);
        return "orders";
+    }
+
+    @PatchMapping("/orders/{id}")
+    public String updateOrder(@RequestBody OrderUpdateForm orderUpdateForm, @PathVariable Long id, Model model) {
+        orderService.updateOrder(id, orderUpdateForm.getOrderContentIndex());
+        return "orders";
     }
 }

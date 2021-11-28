@@ -31,10 +31,15 @@
         <td th:text="${order.name}"></td>
         <td th:text="${order.orderContentIndex}"></td>
     </tr>
+    <p>변경 원하는 음식 번호 입력</p>
+    <form action="/orders/${order.id}" method="post">
+        @method('patch')
+        <input type="number" name="orderContentIndex">;
+        <input type="submit">;
+    </form>
 </table>
 <br>
 <br>
-<p>변경 원하는 음식 번호 입력</p>
 
 </body>
 </html>

@@ -33,4 +33,7 @@ public class OrderService {
     public void deleteOrder(Long id) {
         orderRepository.deleteById(id);
     }
+    public void updateOrder(Long id, int orderContentIndex) {
+        orderRepository.updateOrderContentIndexById(id, orderContentIndex);
+    }
 }
