@@ -5,6 +5,10 @@ public class Order {
     private String name;
     private int orderContentIndex;
 
+    public Order() {
+
+    }
+
     public Order(long id, String name, int orderContentIndex) {
         this.id = id;
         this.name = name;
