@@ -6,7 +6,7 @@
 </head>
 <body>
 <header>
-    <a href="/index.html">HOME</a>
+    <a href="/">HOME</a>
 </header>
 <h1>주문 목록</h1>
 
@@ -26,20 +26,27 @@
             <th>ID</th>
             <th>NAME</th>
             <th>OrderContentIndex</th>
-            <th>수정</th>
             <th>삭제</th>
-
+            <th>수정</th>
         </tr>
         <tr th:each="order : ${orders}">
             <td th:text="${order.id}"></td>
             <td th:text="${order.name}"></td>
             <td th:text="${order.orderContentIndex}"></td>
-            <td></td>
-
+            <td th:utext="|<button type='button' onclick='deleteOrder(${order.id})'>삭제</button>|"></td>
+            <td th:utext="|<button type='button' onclick='updateOrder(${order.id})'>삭제</button>|"></td>
         </tr>
     </table>
 
 </div>
+<script>
+function deleteOrder(id) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('DELETE', `/orders/${id}`);
+  xhr.send();
 
+
+}
+</script>
 </body>
 </html>

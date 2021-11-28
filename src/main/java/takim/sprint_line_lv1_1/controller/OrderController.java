@@ -3,7 +3,9 @@ package takim.sprint_line_lv1_1.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import takim.sprint_line_lv1_1.domain.Order;
 import takim.sprint_line_lv1_1.service.OrderService;
@@ -31,6 +33,7 @@ public class OrderController {
         model.addAttribute("orders", orders);
         return "orders";
     }
+
     @PostMapping("/orders")
     public String create(OrderForm orderForm) {
         Order order =new Order();
@@ -39,8 +42,10 @@ public class OrderController {
         orderService.join(order);
         return "redirect:/";
     }
-   /* @GetMapping("/orders")
-    public List<Order> phoneNumbers() {
-        return ;
-    }*/
+
+    @DeleteMapping("/orders/{id}")
+    public String delete(@PathVariable Long id, Model model) {
+        orderService.deleteOrder(id);
+       return "orders";
+    }
 }
