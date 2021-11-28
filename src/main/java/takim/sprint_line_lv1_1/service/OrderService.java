@@ -7,6 +7,7 @@ import takim.sprint_line_lv1_1.repository.JDBCTemplateOrderRepository;
 import takim.sprint_line_lv1_1.repository.OrderRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class OrderService {
@@ -26,6 +27,9 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
+    public Optional<Order> findById(Long id) {
+        return orderRepository.findById(id);
+    }
     public void deleteOrder(Long id) {
         orderRepository.deleteById(id);
     }
