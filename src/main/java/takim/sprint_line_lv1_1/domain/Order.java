@@ -1,14 +1,14 @@
 package takim.sprint_line_lv1_1.domain;
 
-public class PhoneNumber {
+public class Order {
     private long id;
     private String name;
-    private int phoneNumber;
+    private int orderContentIndex;
 
-    public PhoneNumber(long id, String name, int phoneNumber) {
+    public Order(long id, String name, int orderContentIndex) {
         this.id = id;
         this.name = name;
-        this.phoneNumber = phoneNumber;
+        this.orderContentIndex = orderContentIndex;
     }
 
     public long getId() {
@@ -28,10 +28,10 @@ public class PhoneNumber {
     }
 
     public int getOrderContentIndex() {
-        return phoneNumber;
+        return orderContentIndex;
     }
 
-    public void setOrderContentIndex(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setOrderContentIndex(int orderContentIndex) {
+        this.orderContentIndex = orderContentIndex;
     }
 }
