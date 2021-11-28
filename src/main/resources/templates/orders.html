@@ -34,16 +34,18 @@
             <td th:text="${order.name}"></td>
             <td th:text="${order.orderContentIndex}"></td>
             <td th:utext="|<button type='button' onclick='deleteOrder(${order.id})'>삭제</button>|"></td>
-            <td th:utext="|<button type='button' onclick='updateOrder(${order.id})'>삭제</button>|"></td>
+            <td th:utext="|<button type='button' onclick='window.open('order_update_form.html')'>수정</button>|"></td>
         </tr>
     </table>
 
 </div>
 <script>
 function deleteOrder(id) {
-  const xhr = new XMLHttpRequest();
-  xhr.open('DELETE', `/orders/${id}`);
-  xhr.send();
+  const xhr1 = new XMLHttpRequest();
+  xhr1.open('DELETE', `/orders/${id}`);
+  xhr1.send();
+  window.open("orders");
+}
 
 
 }
