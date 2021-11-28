@@ -34,6 +34,8 @@ public class OrderController {
         return "orders";
     }
 
+    @GetMapping("/orders/update-page")
+    public String orderUpdatePage(@Que)
     @PostMapping("/orders")
     public String create(OrderForm orderForm) {
         Order order =new Order();
