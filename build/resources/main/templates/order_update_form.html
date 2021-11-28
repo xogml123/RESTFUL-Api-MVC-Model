@@ -19,8 +19,22 @@
     <li>김치찌개</li>
     <li>오므라이스</li>
 </ol>
-
-
+<h2>수정하려는 주문 정보</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>OrderContentIndex</th>
+    </tr>
+    <tr>
+        <td th:text="${order.id}"></td>
+        <td th:text="${order.name}"></td>
+        <td th:text="${order.orderContentIndex}"></td>
+    </tr>
+</table>
+<br>
+<br>
+<p>변경 원하는 음식 번호 입력</p>
 
 </body>
 </html>
