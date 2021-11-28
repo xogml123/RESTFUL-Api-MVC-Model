@@ -48,6 +48,9 @@ public class OrderController {
 
     @PostMapping("/orders")
     public String createOrder(OrderForm orderForm) {
+        if (orderForm.getName().equals("") || orderForm.getOrderContentIndex() <= 0 ||
+                orderForm.getOrderContentIndex() > 7)
+            return "redirect:/error";
         Order order =new Order();
         order.setName(orderForm.getName());
         order.setOrderContentIndex(orderForm.getOrderContentIndex());
@@ -63,6 +66,9 @@ public class OrderController {
 
     @PatchMapping("/orders/{id}")
     public String updateOrder(@RequestBody OrderUpdateForm orderUpdateForm, @PathVariable Long id, Model model) {
+        if (orderUpdateForm.getOrderContentIndex() <= 0 ||
+                orderUpdateForm.getOrderContentIndex() > 7)
+            return "error";
         orderService.updateOrder(id, orderUpdateForm.getOrderContentIndex());
         return "orders";
     }

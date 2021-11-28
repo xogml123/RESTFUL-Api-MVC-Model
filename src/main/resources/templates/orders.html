@@ -44,7 +44,8 @@ function deleteOrder(id) {
   const xhr1 = new XMLHttpRequest();
   xhr1.open('DELETE', `/orders/${id}`);
   xhr1.send();
-  window.open("orders");
+  setTimeout(window.open("orders"), 200);
+
 }
 
 function updateOrder(id){
@@ -56,7 +57,7 @@ function updateOrder(id){
         },
         body: JSON.stringify({'orderContentIndex': orderContentIndex }),
       })
-  window.open("orders");
+      .then(window.open("orders"));
 
 }
 </script>
